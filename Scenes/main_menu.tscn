@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7c0a66x8icjx"]
+[gd_scene load_steps=6 format=3 uid="uid://dwdwyorsskpyg"]
 
-[ext_resource type="Script" uid="uid://7xqtbkf0eo60" path="res://Scripts/MainMenu.gd" id="1_n45e2"]
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_n45e2"]
 [ext_resource type="Texture2D" uid="uid://bawcr5n25l7jk" path="res://Assets/mainMenu/startUnpressed.png" id="2_opfnp"]
 [ext_resource type="Texture2D" uid="uid://tqyigrlkss01" path="res://Assets/mainMenu/startPressed.png" id="3_cp0ys"]
 [ext_resource type="Texture2D" uid="uid://66f4nw6vgkyb" path="res://Assets/mainMenu/optionUnpressed.png" id="4_yhxw7"]
@@ -34,6 +34,7 @@ offset_bottom = 1260.0
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("2_opfnp")
 texture_pressed = ExtResource("3_cp0ys")
+texture_hover = ExtResource("3_cp0ys")
 
 [node name="OptionButton" type="TextureButton" parent="."]
 layout_mode = 0
@@ -45,3 +46,10 @@ scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("4_yhxw7")
 texture_pressed = ExtResource("5_trj04")
 ignore_texture_size = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 194.0
+offset_right = 742.0
+offset_bottom = 277.0
