@@ -1,5 +1,7 @@
 # 07:11
 
+![07:11 Banner](Banner.png)
+
 **07:11** is a 2D platforming speedrun game created for the **Hack Club Horizons Arcana** hackathon by **Dashun Feng, Fizza, and Avanthika**.
 
 Inspired by the event's randomly assigned photo prompt, you play as an adorable cat racing through a convenience store to complete a randomized grocery shopping list as quickly as possible. Every run presents a different combination of items, encouraging players to optimize their route and improve their time.
