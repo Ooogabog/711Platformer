@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj77oh2u5s784"]
+
+[ext_resource type="Script" uid="uid://bgr7hesbx44wm" path="res://Scripts/tool_tip.gd" id="1_wdhw8"]
+
+[node name="ToolTip" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wdhw8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1298.0
+offset_bottom = 762.0
+color = Color(0.68734586, 0.8583509, 0.83045185, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -66.0
+offset_top = 62.0
+offset_right = 1320.0
+offset_bottom = 705.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 39
+text = "hello little cat!
+
+you will be given a random shopping list
+of items to search for. navigate the 7/11 aisles
+and press \"E\" to enter them.
+
+Find and grab all 3 items as fast as you can!
+Compete to be the quickest cat!
+Time starts when you press GO"
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 612.0
+offset_right = 777.0
+offset_bottom = 689.0
+theme_override_font_sizes/font_size = 40
+text = "GO"
+
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://wcivmxt3j6ef"]
+
+[ext_resource type="Script" uid="uid://ceyx1df7ybxlq" path="res://Scripts/starbucks.gd" id="1_lu2vv"]
+[ext_resource type="Texture2D" uid="uid://c6vuh4dj5hkfh" path="res://Assets/128.png" id="2_8g1th"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gr1o3"]
+size = Vector2(64, 107)
+
+[node name="Area2D" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_lu2vv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8g1th")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_gr1o3")

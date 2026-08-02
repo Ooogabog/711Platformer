@@ -1,0 +1,245 @@
+[gd_scene load_steps=36 format=3 uid="uid://c7c0a66x8icjx"]
+
+[ext_resource type="Script" uid="uid://7xqtbkf0eo60" path="res://Scripts/MainMenu.gd" id="1_n45e2"]
+[ext_resource type="Texture2D" uid="uid://djd01t662adh" path="res://Assets/mainMenu/logo.png" id="2_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://bawcr5n25l7jk" path="res://Assets/mainMenu/startUnpressed.png" id="2_opfnp"]
+[ext_resource type="Texture2D" uid="uid://ns8datl5evkt" path="res://Assets/shelf1.png" id="3_16hvj"]
+[ext_resource type="Texture2D" uid="uid://tqyigrlkss01" path="res://Assets/mainMenu/startPressed.png" id="3_cp0ys"]
+[ext_resource type="Script" uid="uid://b1rbfmekpqfl6" path="res://Scripts/logoAnimate.gd" id="3_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://66f4nw6vgkyb" path="res://Assets/mainMenu/optionUnpressed.png" id="4_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://cqptcn64av2e3" path="res://Assets/mainMenu/optionPressed.png" id="5_trj04"]
+[ext_resource type="Texture2D" uid="uid://3bo3bx7so2dj" path="res://Assets/Drinks.png" id="8_trj04"]
+[ext_resource type="Texture2D" uid="uid://krkvlram7u4c" path="res://Assets/128 (2).png" id="9_trj04"]
+[ext_resource type="Texture2D" uid="uid://c6vuh4dj5hkfh" path="res://Assets/128.png" id="10_t1dhk"]
+[ext_resource type="Texture2D" uid="uid://dwkxph6svjyik" path="res://Assets/128 (5).png" id="11_5egv6"]
+[ext_resource type="Texture2D" uid="uid://dto6axga62wdd" path="res://Assets/Exit Unpressed.png" id="12_m3bi6"]
+[ext_resource type="Texture2D" uid="uid://31ot7nqdbv5f" path="res://Assets/128 (4).png" id="12_vtepg"]
+[ext_resource type="Texture2D" uid="uid://xdsx5q1slqub" path="res://Assets/Exit Pressed.png" id="13_wyh8j"]
+[ext_resource type="Texture2D" uid="uid://bf4w3m5dfgmod" path="res://Assets/128 (3).png" id="14_vtepg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhxw7"]
+atlas = ExtResource("2_cp0ys")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n45e2"]
+atlas = ExtResource("2_opfnp")
+region = Rect2(170, 490, 840, 260)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_opfnp"]
+texture = SubResource("AtlasTexture_n45e2")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dnnj"]
+atlas = ExtResource("3_cp0ys")
+region = Rect2(170, 490, 840, 260)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m3bi6"]
+texture = SubResource("AtlasTexture_8dnnj")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyh8j"]
+atlas = ExtResource("2_opfnp")
+region = Rect2(170, 490, 840, 260)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5egv6"]
+texture = SubResource("AtlasTexture_wyh8j")
+modulate_color = Color(1, 0.5137255, 0.6039216, 0.8509804)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48xlc"]
+atlas = ExtResource("4_yhxw7")
+region = Rect2(170, 490, 840, 260)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ehe0"]
+texture = SubResource("AtlasTexture_48xlc")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ehe0"]
+atlas = ExtResource("5_trj04")
+region = Rect2(170, 490, 840, 260)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n45e2"]
+texture = SubResource("AtlasTexture_1ehe0")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtepg"]
+atlas = ExtResource("4_yhxw7")
+region = Rect2(170, 490, 840, 260)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8dnnj"]
+texture = SubResource("AtlasTexture_vtepg")
+modulate_color = Color(1, 0.5137255, 0.6039216, 0.8509804)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujyyl"]
+atlas = ExtResource("12_m3bi6")
+region = Rect2(291, 484.5, 614, 265)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mkpwh"]
+texture = SubResource("AtlasTexture_ujyyl")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nkqq"]
+atlas = ExtResource("13_wyh8j")
+region = Rect2(291, 484.5, 614, 265)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ehtkc"]
+texture = SubResource("AtlasTexture_4nkqq")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6dk6o"]
+atlas = ExtResource("12_m3bi6")
+region = Rect2(291, 484.5, 614, 265)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jr6u5"]
+texture = SubResource("AtlasTexture_6dk6o")
+modulate_color = Color(0.1254902, 0.56078434, 0.24705882, 0.7411765)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n45e2")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1281.0
+offset_bottom = 721.0
+texture = ExtResource("8_trj04")
+
+[node name="food4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 997.0
+offset_top = 418.0
+offset_right = 1143.6667
+offset_bottom = 553.3334
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_vtepg")
+
+[node name="shelf1" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -63.0
+offset_top = -439.0
+offset_right = 274.0
+offset_bottom = 3.0
+scale = Vector2(4, 4)
+texture = ExtResource("3_16hvj")
+flip_h = true
+
+[node name="shelf2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -67.0
+offset_top = -668.0
+offset_right = 270.0
+offset_bottom = -226.0
+scale = Vector2(4, 4)
+texture = ExtResource("3_16hvj")
+flip_h = true
+
+[node name="shelf3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -435.0
+offset_right = 339.0
+offset_bottom = 7.0
+scale = Vector2(4, 4)
+texture = ExtResource("3_16hvj")
+
+[node name="food5" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 191.00002
+offset_right = 328.0
+offset_bottom = 319.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("14_vtepg")
+
+[node name="shelf4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -668.0
+offset_right = 341.0
+offset_bottom = -226.0
+scale = Vector2(4, 4)
+texture = ExtResource("3_16hvj")
+
+[node name="LogoShadow" type="TextureRect" parent="."]
+modulate = Color(0.21960784, 0, 0.21960784, 0.12941177)
+layout_mode = 0
+offset_left = 264.0
+offset_top = 36.0
+offset_right = 1894.9678
+offset_bottom = 868.0
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_yhxw7")
+script = ExtResource("3_yhxw7")
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 264.0
+offset_top = -12.0
+offset_right = 1768.0
+offset_bottom = 834.0
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_yhxw7")
+script = ExtResource("3_yhxw7")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 452.0
+offset_top = 364.0
+offset_right = 547.25
+offset_bottom = 390.75
+scale = Vector2(4, 4)
+theme_override_styles/normal = SubResource("StyleBoxTexture_opfnp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_m3bi6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5egv6")
+
+[node name="OptionButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 452.0
+offset_top = 491.0
+offset_right = 547.25
+offset_bottom = 517.75
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(4, 4)
+theme_override_styles/normal = SubResource("StyleBoxTexture_1ehe0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_n45e2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8dnnj")
+metadata/_edit_use_anchors_ = true
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 1
+offset_left = 546.0
+offset_top = 609.0
+offset_right = 746.0
+offset_bottom = 709.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_mkpwh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ehtkc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jr6u5")
+
+[node name="food" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 209.0
+offset_right = 172.0
+offset_bottom = 337.0
+texture = ExtResource("10_t1dhk")
+
+[node name="food2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1144.0
+offset_top = 210.0
+offset_right = 1272.0
+offset_bottom = 338.0
+texture = ExtResource("9_trj04")
+
+[node name="food3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 443.0
+offset_right = 153.0
+offset_bottom = 571.0
+texture = ExtResource("11_5egv6")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="OptionButton" to="." method="_on_option_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

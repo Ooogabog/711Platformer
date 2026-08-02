@@ -1,0 +1,129 @@
+[gd_scene load_steps=12 format=3 uid="uid://ceerwht2afkj5"]
+
+[ext_resource type="Script" uid="uid://bu6ky5jr8q1wk" path="res://Scripts/level_select.gd" id="1_gqa4u"]
+[ext_resource type="Texture2D" uid="uid://71w6fle2hjot" path="res://Assets/levelSelect/cfr2bc3f79d192aws3.png" id="1_p4fnh"]
+[ext_resource type="Script" uid="uid://d2dsoxrim5dwp" path="res://Scripts/sceneSelectPlayer.gd" id="1_qtyfc"]
+[ext_resource type="Texture2D" uid="uid://kb1o0hmxvcl3" path="res://Assets/levelSelect/CatWanderSprite.png" id="2_lo084"]
+[ext_resource type="Texture2D" uid="uid://c0fu4ftgbs2nc" path="res://Assets/levelSelect/cfr246b3ec1c00aws3.png" id="4_i75fm"]
+[ext_resource type="Script" uid="uid://denmx738ffd7y" path="res://Scripts/SceneSelectEntrance.gd" id="4_rdqmn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i75fm"]
+atlas = ExtResource("1_p4fnh")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtyfc"]
+atlas = ExtResource("2_lo084")
+region = Rect2(332.844, 293.02344, 511.93518, 455.47943)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i75fm"]
+radius = 24.5153
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqa4u"]
+atlas = ExtResource("4_i75fm")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gqa4u"]
+radius = 36.05551
+
+[node name="LevelSelect" type="Node2D"]
+script = ExtResource("1_gqa4u")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(420, 344)
+scale = Vector2(0.5083333, 0.5083333)
+texture = SubResource("AtlasTexture_i75fm")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_qtyfc")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(287.9964, 548.6407)
+scale = Vector2(0.15982139, 0.15982139)
+texture = SubResource("AtlasTexture_qtyfc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(287, 554)
+shape = SubResource("CircleShape2D_i75fm")
+
+[node name="SnackEntrance" type="Area2D" parent="."]
+script = ExtResource("4_rdqmn")
+destination_scene = "uid://6qa8u8t1dblf"
+
+[node name="Sprite2D" type="Sprite2D" parent="SnackEntrance"]
+modulate = Color(1, 0.48235294, 1, 0.7019608)
+position = Vector2(253.91405, 428.91406)
+scale = Vector2(0.05514323, 0.05514323)
+texture = SubResource("AtlasTexture_gqa4u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnackEntrance"]
+position = Vector2(254, 428)
+shape = SubResource("CircleShape2D_gqa4u")
+
+[node name="Prompt" type="Label" parent="SnackEntrance"]
+visible = false
+offset_left = 200.0
+offset_top = 467.0
+offset_right = 323.0
+offset_bottom = 490.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "[E] Enter Snacks"
+
+[node name="DrinkEntrance" type="Area2D" parent="."]
+script = ExtResource("4_rdqmn")
+destination_scene = "uid://bf5ujvjbgojo2"
+
+[node name="Sprite2D" type="Sprite2D" parent="DrinkEntrance"]
+modulate = Color(1, 0.48235294, 1, 0.7019608)
+position = Vector2(558, 181)
+scale = Vector2(0.05514323, 0.05514323)
+texture = SubResource("AtlasTexture_gqa4u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DrinkEntrance"]
+position = Vector2(558, 180)
+shape = SubResource("CircleShape2D_gqa4u")
+
+[node name="Prompt" type="Label" parent="DrinkEntrance"]
+visible = false
+offset_left = 507.0
+offset_top = 222.0
+offset_right = 630.0
+offset_bottom = 245.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "[E] Enter Drinks"
+
+[node name="HotEntrance" type="Area2D" parent="."]
+script = ExtResource("4_rdqmn")
+destination_scene = "uid://4gefm6mn0ud4"
+
+[node name="Sprite2D" type="Sprite2D" parent="HotEntrance"]
+modulate = Color(1, 0.48235294, 1, 0.7019608)
+position = Vector2(260, 157)
+scale = Vector2(0.05514323, 0.05514323)
+texture = SubResource("AtlasTexture_gqa4u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HotEntrance"]
+position = Vector2(261, 159)
+shape = SubResource("CircleShape2D_gqa4u")
+
+[node name="Prompt" type="Label" parent="HotEntrance"]
+visible = false
+offset_left = 192.0
+offset_top = 203.0
+offset_right = 332.0
+offset_bottom = 226.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "[E] Enter Hot Food"
+
+[node name="GroceryListLabel" type="Label" parent="."]
+offset_left = 781.00006
+offset_top = 124.0
+offset_right = 916.6667
+offset_bottom = 289.0
+scale = Vector2(3, 3)
+text = "asdf"
+
+[node name="StopwatchLabel" type="Label" parent="."]
+offset_left = 1107.0
+offset_top = 44.0
+offset_right = 1186.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 31
+text = "07:11"

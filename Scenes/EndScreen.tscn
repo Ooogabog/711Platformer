@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://b747h1236nhn6"]
+
+[ext_resource type="Script" uid="uid://8fgunnkfa88o" path="res://Scenes/end_screen.gd" id="1_gcms0"]
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gcms0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1298.0
+offset_bottom = 762.0
+color = Color(0.84762263, 0.8428515, 0.4281395, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = -66.0
+offset_top = 62.0
+offset_right = 1320.0
+offset_bottom = 705.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 39
+text = "You did it!!!!!!!!
+yippeee yaya ayayyayy
+
+final time:
+
+
+now run it back and set a wr"
+horizontal_alignment = 1
+
+[node name="HomeButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 479.0
+offset_top = 518.0
+offset_right = 776.0
+offset_bottom = 595.0
+theme_override_font_sizes/font_size = 40
+text = "back to home"
+
+[node name="StopwatchLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 298.0
+offset_right = 747.0
+offset_bottom = 381.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "07:11"
+
+[connection signal="pressed" from="HomeButton" to="." method="_on_home_button_pressed"]

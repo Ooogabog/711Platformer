@@ -1,0 +1,159 @@
+[gd_scene load_steps=24 format=4 uid="uid://bf5ujvjbgojo2"]
+
+[ext_resource type="Texture2D" uid="uid://3bo3bx7so2dj" path="res://Assets/Drinks.png" id="1_1q6tm"]
+[ext_resource type="Script" uid="uid://c77edl8c17iq0" path="res://Scripts/levels.gd" id="1_t7v2y"]
+[ext_resource type="Texture2D" uid="uid://cpddwmtwbdyrd" path="res://Assets/thickerborder.png" id="2_1q6tm"]
+[ext_resource type="PackedScene" uid="uid://bt132rxeefxv3" path="res://Scenes/shelves.tscn" id="3_12fag"]
+[ext_resource type="PackedScene" uid="uid://bo1hpo8n38omk" path="res://Scenes/Player.tscn" id="3_v36qu"]
+[ext_resource type="Script" uid="uid://2o5g7vamcv0l" path="res://Scripts/aisleExit.gd" id="5_cggpd"]
+[ext_resource type="Texture2D" uid="uid://c0fu4ftgbs2nc" path="res://Assets/levelSelect/cfr246b3ec1c00aws3.png" id="6_055b2"]
+[ext_resource type="Script" uid="uid://djpgp0768x3j1" path="res://Scripts/Collectible.gd" id="7_uhnj4"]
+[ext_resource type="Texture2D" uid="uid://bmpr5a0poax6d" path="res://Assets/Collectibles/Coffee.png" id="8_42uki"]
+[ext_resource type="Texture2D" uid="uid://borae5v2edrld" path="res://Assets/Collectibles/Orange Juice.png" id="9_42uki"]
+[ext_resource type="Texture2D" uid="uid://bf4w3m5dfgmod" path="res://Assets/128 (3).png" id="10_t7v2y"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v36qu"]
+texture = ExtResource("1_1q6tm")
+0:0/size_in_atlas = Vector2i(80, 45)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cggpd"]
+tile_size = Vector2i(1280, 720)
+sources/0 = SubResource("TileSetAtlasSource_v36qu")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbghi"]
+texture = ExtResource("2_1q6tm")
+17:12/size_in_atlas = Vector2i(43, 6)
+17:12/0 = 0
+17:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-343.80258, -48.113243, 343.7646, -47.41581, 344.12122, 48.113243, -344.43985, 47.794613)
+
+[sub_resource type="TileSet" id="TileSet_hn12h"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_hbghi")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mgoq"]
+atlas = ExtResource("6_055b2")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uhnj4"]
+radius = 36.05551
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ait6c"]
+atlas = ExtResource("8_42uki")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcilj"]
+size = Vector2(57.25, 75.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcilj"]
+atlas = ExtResource("9_42uki")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bl0du"]
+size = Vector2(30.625, 73.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0ycs"]
+atlas = ExtResource("10_t7v2y")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hj5x7"]
+size = Vector2(30.125, 49.75)
+
+[node name="Level 2" type="Node2D"]
+script = ExtResource("1_t7v2y")
+
+[node name="Background" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_cggpd")
+
+[node name="Boundary" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAUAC4AAAARAAwAADA/AC4AAAARAAwAADBSABcAAAARAAwAAGAUAP7/AAARAAwAAAA/AP7/AAARAAwAAABSAA0AAAARAAwAAFD9/xIAAAARAAwAAFD9/yYAAAARAAwAAFA=")
+tile_set = SubResource("TileSet_hn12h")
+
+[node name="Player" parent="." instance=ExtResource("3_v36qu")]
+position = Vector2(128, 601)
+collision_layer = 1
+
+[node name="Shelves" parent="." instance=ExtResource("3_12fag")]
+position = Vector2(668, 430)
+
+[node name="Shelves2" parent="." instance=ExtResource("3_12fag")]
+position = Vector2(670, 258)
+
+[node name="Shelves3" parent="." instance=ExtResource("3_12fag")]
+position = Vector2(679, 74)
+
+[node name="Shelves4" parent="." instance=ExtResource("3_12fag")]
+position = Vector2(1393, 434)
+
+[node name="Shelves5" parent="." instance=ExtResource("3_12fag")]
+position = Vector2(1395, 262)
+
+[node name="Shelves6" parent="." instance=ExtResource("3_12fag")]
+position = Vector2(1393, 83)
+
+[node name="HotEntrance" type="Area2D" parent="."]
+position = Vector2(397, 480)
+script = ExtResource("5_cggpd")
+destination_scene = "uid://ceerwht2afkj5"
+
+[node name="Sprite2D" type="Sprite2D" parent="HotEntrance"]
+modulate = Color(1, 0.48235294, 1, 0.7019608)
+position = Vector2(260, 157)
+scale = Vector2(0.05514323, 0.05514323)
+texture = SubResource("AtlasTexture_2mgoq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HotEntrance"]
+position = Vector2(261, 159)
+shape = SubResource("CircleShape2D_uhnj4")
+
+[node name="Prompt" type="Label" parent="HotEntrance"]
+offset_left = 230.0
+offset_top = 86.0
+offset_right = 370.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "[E] Return"
+
+[node name="CoffeeCollectible" type="Area2D" parent="."]
+position = Vector2(-341, -179)
+script = ExtResource("7_uhnj4")
+item_name = "Coffee"
+
+[node name="Sprite2D" type="Sprite2D" parent="CoffeeCollectible"]
+position = Vector2(1011, 296)
+texture = SubResource("AtlasTexture_ait6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CoffeeCollectible"]
+position = Vector2(1011, 298)
+shape = SubResource("RectangleShape2D_vcilj")
+
+[node name="Orange JuiceCollectible" type="Area2D" parent="."]
+position = Vector2(-343, 4)
+script = ExtResource("7_uhnj4")
+item_name = "Orange Juice"
+
+[node name="Sprite2D" type="Sprite2D" parent="Orange JuiceCollectible"]
+position = Vector2(1011, 296)
+texture = SubResource("AtlasTexture_vcilj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Orange JuiceCollectible"]
+position = Vector2(1009, 305)
+shape = SubResource("RectangleShape2D_bl0du")
+
+[node name="CokeCollectible" type="Area2D" parent="."]
+position = Vector2(-338, 186)
+script = ExtResource("7_uhnj4")
+item_name = "Coke"
+
+[node name="Sprite2D" type="Sprite2D" parent="CokeCollectible"]
+position = Vector2(1011, 296)
+texture = SubResource("AtlasTexture_q0ycs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CokeCollectible"]
+position = Vector2(1010, 296)
+shape = SubResource("RectangleShape2D_hj5x7")
+
+[node name="StopwatchLabel" type="Label" parent="."]
+offset_left = 1107.0
+offset_top = 44.0
+offset_right = 1186.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 31
+text = "07:11"
